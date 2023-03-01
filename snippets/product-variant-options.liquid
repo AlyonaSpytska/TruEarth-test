@@ -60,6 +60,12 @@
       {% endif %}
     >
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      {% if option.name == 'Scents' %}
+        <img src="{{ product.selected_or_first_available_variant.featured_image | product_img_url: 'small' }}" 
+        alt="{{product.selected_or_first_available_variant.featured_image.alt}}"
+        loading="lazy"
+        >
+      {% endif %}
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>

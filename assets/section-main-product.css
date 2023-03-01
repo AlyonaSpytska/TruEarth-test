@@ -203,7 +203,8 @@ fieldset.product-form__input .form__label {
   color: rgba(var(--color-foreground));
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin: 0.7rem 0.5rem 0.2rem 0;
   padding: 1rem 2rem;
   font-size: 1.4rem;
@@ -237,6 +238,12 @@ fieldset.product-form__input .form__label {
 .product-form__input input[type='radio']:checked + label {
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
+}
+
+.product-form__input input[type='radio'] + label img {
+  max-width: 40px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .product-form__input
