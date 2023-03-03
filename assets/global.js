@@ -974,17 +974,33 @@ class VariantSelects extends HTMLElement {
     this.removeErrorMessage();
     this.updateVariantStatuses();
     this.chooseImgVariant();
+    this.updateVariantImages();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
     } else {
+
       this.updateMedia();
       this.updateURL();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
     }
+  }
+
+  updateVariantImages() {
+    const size = this.currentVariant.option1;
+      console.log('**')
+      console.log(window.thatProduct)
+    // const images = document.querySelectorAll('.variant-label img');
+    // this.currentVariant = this.getVariantData().forEach(variant => {
+    //   if (size === variant.option1) {
+    //     images.forEach(element => {
+    //       element.src = variant.featured_image.src;
+    //     });
+    //   }
+    // });
   }
 
   chooseImgVariant() {

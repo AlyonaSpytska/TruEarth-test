@@ -536,6 +536,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      window.thatProduct = {{ product | json }}
       function isIE() {
         const ua = window.navigator.userAgent;
         const msie = ua.indexOf('MSIE ');

@@ -16,6 +16,10 @@
 
 {%- if media.media_type == 'image' -%}
   <img
+    {% if product.selected_or_first_available_variant.featured_image.alt != media.alt and product.selected_or_first_available_variant.featured_image.alt != blank %}
+    style="display:none"
+    {% endif %}
+    thumbnail-alt="{{ media.alt }}"
     class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
     srcset="{%- if media.preview_image.width >= 550 -%}{{ media.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
             {%- if media.preview_image.width >= 1100 -%}{{ media.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
